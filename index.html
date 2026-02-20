@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunalo's Restaurant</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="logo">🍽 Lunalo's Restaurant</div>
+    <div class="menu-btn" onclick="openMenu()">☰</div>
+</header>
+
+<nav id="sideMenu">
+    <a href="javascript:void(0)" onclick="closeMenu()">✖ Close</a>
+    <a href="#foodList">Menu</a>
+    <a href="#cart">Cart</a>
+</nav>
+
+<section class="hero">
+    <h1>Delicious Kenyan Meals Delivered To You</h1>
+    <p>Serving Nairobi, Nakuru & Machakos County</p>
+</section>
+
+<div class="container">
+
+<div class="controls">
+    <input type="text" id="search" placeholder="Search food..." oninput="filterFood()">
+    <select id="category" onchange="filterFood()">
+        <option value="">All Categories</option>
+        <option value="Meat">Meat</option>
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="Drinks">Drinks</option>
+    </select>
+</div>
+
+<div class="food-grid" id="foodList"></div>
+
+<div class="cart" id="cart">
+    <h2>Your Order</h2>
+    <ul id="cartItems"></ul>
+    <h3>Total: KSh <span id="total">0</span></h3>
+
+    <input type="text" id="customerName" placeholder="Your Name">
+
+    <select id="county" onchange="updateTowns()">
+        <option value="">Select County</option>
+        <option value="Nairobi">Nairobi</option>
+        <option value="Nakuru">Nakuru</option>
+        <option value="Machakos">Machakos</option>
+    </select>
+
+    <select id="town">
+        <option value="">Select Town</option>
+    </select>
+
+    <button class="order-btn" onclick="placeOrder()">
+        Pay via M-Pesa (0710545977)
+    </button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
